@@ -20,4 +20,4 @@ Data is stored in the browser using LocalStorage. The dashboard visualizes the l
 - Storage: Browser LocalStorage
 
 ---
-git clone https://github.com/your-username/HealthyLife.git
+(https://github.com/shahdhairya004/WellTrack)
