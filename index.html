@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WellTrack — Personal Wellness Tracker</title>
+
+  <!-- Bootstrap (optional, for quick nice styling) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">WellTrack</span>
+      <small class="text-white">Personal Wellness Tracker</small>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <div class="row g-4">
+
+      <!-- Left: Input / History -->
+      <div class="col-lg-4">
+        <div class="card p-3">
+          <h5>Log Today's Entry</h5>
+          <form id="entryForm" class="needs-validation" novalidate>
+            <div class="mb-2">
+              <label for="entryDate" class="form-label">Date</label>
+              <input id="entryDate" type="date" class="form-control" required>
+            </div>
+
+            <div class="mb-2">
+              <label for="water" class="form-label">Water (ml)</label>
+              <input id="water" type="number" min="0" class="form-control" placeholder="e.g., 1500" required>
+            </div>
+
+            <div class="mb-2">
+              <label for="sleep" class="form-label">Sleep (hours)</label>
+              <input id="sleep" type="number" step="0.1" min="0" class="form-control" placeholder="e.g., 7.5" required>
+            </div>
+
+            <div class="mb-2">
+              <label for="steps" class="form-label">Steps</label>
+              <input id="steps" type="number" min="0" class="form-control" placeholder="e.g., 5000" required>
+            </div>
+
+            <div class="mb-2">
+              <label for="exercise" class="form-label">Exercise (minutes)</label>
+              <input id="exercise" type="number" min="0" class="form-control" placeholder="e.g., 30" required>
+            </div>
+
+            <div class="mb-2">
+              <label for="meals" class="form-label">Meals (count)</label>
+              <input id="meals" type="number" min="0" class="form-control" placeholder="e.g., 3" required>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button id="saveBtn" type="submit" class="btn btn-success">Save Entry</button>
+              <button id="clearAllBtn" type="button" class="btn btn-outline-danger">Clear All Data</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card p-3 mt-3">
+          <h6>Recent Entries</h6>
+          <ul id="historyList" class="list-group list-group-flush small"></ul>
+        </div>
+      </div>
+
+      <!-- Right: Dashboard -->
+      <div class="col-lg-8">
+        <div class="card p-3 mb-3">
+          <h5>Dashboard (last 7 days)</h5>
+          <canvas id="dashboardChart" height="120"></canvas>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card stat-card p-3 text-center">
+              <div>Avg Water (ml)</div>
+              <div id="avgWater" class="stat-value">—</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card stat-card p-3 text-center">
+              <div>Avg Sleep (hrs)</div>
+              <div id="avgSleep" class="stat-value">—</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card stat-card p-3 text-center">
+              <div>Avg Steps</div>
+              <div id="avgSteps" class="stat-value">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-3 mt-3">
+          <h6>Notes</h6>
+          <p class="small mb-0">This demo stores data locally in your browser (LocalStorage). For multi-device sync, integrate Firebase or a backend API.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="text-center py-3 small text-muted">
+    HealthyLife • Demo project for IHWP submission
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

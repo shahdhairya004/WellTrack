@@ -1,0 +1,21 @@
+body {
+  background: #f8fafc;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.stat-card {
+  border-radius: .6rem;
+  background: linear-gradient(90deg,#ffffff,#f1f6ff);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0d6efd;
+  margin-top: 6px;
+}
+
+.card {
+  border-radius: .6rem;
+}
